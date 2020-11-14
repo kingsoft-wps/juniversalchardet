@@ -179,7 +179,7 @@ Put this dependency in your pom.xml
 <dependency>
 	<groupId>com.github.albfernandez</groupId>
 	<artifactId>juniversalchardet</artifactId>
-	<version>2.3.2</version>
+	<version>2.4.0</version>
 </dependency>
 
 ```
@@ -189,7 +189,7 @@ Put this dependency in your pom.xml
 Put this line in your build.gradle
 
 ```groovy
-implementation 'com.github.albfernandez:juniversalchardet:2.3.2'
+implementation 'com.github.albfernandez:juniversalchardet:2.4.0'
 ```
 
 ## Building from sources
