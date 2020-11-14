@@ -153,9 +153,9 @@
 
 	<profiles>
 		<profile>
-			<id>jdk7on</id>
+			<id>jdk7</id>
 			<activation>
-				<jdk>(,1.8]</jdk>
+				<jdk>(,1.7]</jdk>
 			</activation>
 			<build>
 				<plugins>
@@ -178,6 +178,60 @@
 						<executions>
 							<execution>
 								<id>findbugs-check</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>jdk8</id>
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.7.0</version>
+						<configuration>
+							<excludes>
+								<exclude>module-info.java</exclude>
+							</excludes>
+							<source>${compiler.level}</source>
+							<target>${compiler.level}</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>com.github.spotbugs</groupId>
+						<artifactId>spotbugs-maven-plugin</artifactId>
+						<version>${version.spotbugs-maven-plugin}</version>
+						<configuration>
+							<effort>Max</effort>
+							<threshold>Medium</threshold>
+							<includeTests>false</includeTests>
+							<failOnError>false</failOnError>
+							<plugins>
+								<plugin>
+									<groupId>com.h3xstream.findsecbugs</groupId>
+									<artifactId>findsecbugs-plugin</artifactId>
+									<version>${version.findsecbugs-plugin}</version>
+								</plugin>
+								<plugin>
+									<groupId>com.mebigfatguy.sb-contrib</groupId>
+									<artifactId>sb-contrib</artifactId>
+									<version>${version.sb-contrib}</version>
+								</plugin>
+							</plugins>
+						</configuration>
+						<executions>
+							<execution>
+								<id>spotbugs-check</id>
 								<phase>verify</phase>
 								<goals>
 									<goal>check</goal>
