@@ -45,8 +45,7 @@ import org.mozilla.universalchardet.prober.statemachine.SMModel;
 import org.mozilla.universalchardet.Constants;
 
 
-public class GB18030Prober extends CharsetProber
-{
+public class GB18030Prober extends CharsetProber {
     ////////////////////////////////////////////////////////////////
     // fields
     ////////////////////////////////////////////////////////////////
@@ -63,8 +62,7 @@ public class GB18030Prober extends CharsetProber
     ////////////////////////////////////////////////////////////////
     // methods
     ////////////////////////////////////////////////////////////////
-    public GB18030Prober()
-    {
+	public GB18030Prober() {
         super();
         this.codingSM = new CodingStateMachine(smModel);
         this.distributionAnalyzer = new GB2312DistributionAnalysis();
@@ -73,26 +71,22 @@ public class GB18030Prober extends CharsetProber
     }
     
     @Override
-    public String getCharSetName()
-    {
+	public String getCharSetName() {
         return Constants.CHARSET_GB18030;
     }
 
     @Override
-    public float getConfidence()
-    {
+	public float getConfidence() {
         return this.distributionAnalyzer.getConfidence();
     }
 
     @Override
-    public ProbingState getState()
-    {
+	public ProbingState getState() {
         return this.state;
     }
 
     @Override
-    public ProbingState handleData(byte[] buf, int offset, int length)
-    {
+	public ProbingState handleData(byte[] buf, int offset, int length) {
         int codingState;
         
         int maxPos = offset + length;
@@ -129,8 +123,7 @@ public class GB18030Prober extends CharsetProber
     }
 
     @Override
-    public final void reset()
-    {
+	public final void reset() {
         this.codingSM.reset();
         this.state = ProbingState.DETECTING;
         this.distributionAnalyzer.reset();
@@ -138,6 +131,6 @@ public class GB18030Prober extends CharsetProber
     }
 
     @Override
-    public void setOption()
-    {}
+	public void setOption() {
+	}
 }

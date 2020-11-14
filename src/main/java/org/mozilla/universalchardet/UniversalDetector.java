@@ -65,8 +65,7 @@ import org.mozilla.universalchardet.prober.Latin1Prober;
 import org.mozilla.universalchardet.prober.MBCSGroupProber;
 import org.mozilla.universalchardet.prober.SBCSGroupProber;
 
-public class UniversalDetector
-{
+public class UniversalDetector {
     ////////////////////////////////////////////////////////////////
     // constants
     ////////////////////////////////////////////////////////////////
@@ -77,12 +76,9 @@ public class UniversalDetector
     ////////////////////////////////////////////////////////////////
     // inner types
     ////////////////////////////////////////////////////////////////
-    public enum InputState
-    {
-        PURE_ASCII,
-        ESC_ASCII,
-        HIGHBYTE
-    }
+	public enum InputState {
+		PURE_ASCII, ESC_ASCII, HIGHBYTE
+	}
     
 
     ////////////////////////////////////////////////////////////////
@@ -113,8 +109,7 @@ public class UniversalDetector
      * @param listener a listener object that is notified of
      *         the detected encocoding. Can be null.
      */
-    public UniversalDetector(CharsetListener listener)
-    {
+	public UniversalDetector(CharsetListener listener) {
         this.listener = listener;
         this.escCharsetProber = null;
         this.probers = new CharsetProber[3];
@@ -154,8 +149,7 @@ public class UniversalDetector
      * @param offset initial position of data in buf
      * @param length length of data
      */
-    public void handleData(final byte[] buf, int offset, int length)
-    {
+	public void handleData(final byte[] buf, int offset, int length) {
         if (this.done) {
             return;
         }
@@ -284,8 +278,7 @@ public class UniversalDetector
     /**
      * Marks end of data reading. Finish calculations.
      */
-    public void dataEnd()
-    {
+	public void dataEnd() {
         if (!this.gotData) {
             return;
         }
@@ -330,8 +323,7 @@ public class UniversalDetector
     /**
      * Resets detector to be used again.
      */
-    public final void reset()
-    {
+	public final void reset() {
         this.done = false;
         this.start = true;
         this.detectedCharset = null;

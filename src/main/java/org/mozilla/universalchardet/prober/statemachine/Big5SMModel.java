@@ -44,8 +44,7 @@ import static org.mozilla.universalchardet.prober.statemachine.PkgInt.UNIT_MASK_
 import org.mozilla.universalchardet.Constants;
 
 
-public class Big5SMModel extends SMModel
-{
+public class Big5SMModel extends SMModel {
     ////////////////////////////////////////////////////////////////
     // constants
     ////////////////////////////////////////////////////////////////

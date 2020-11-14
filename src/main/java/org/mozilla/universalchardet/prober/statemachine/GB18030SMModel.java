@@ -44,8 +44,7 @@ import static org.mozilla.universalchardet.prober.statemachine.PkgInt.UNIT_MASK_
 import org.mozilla.universalchardet.Constants;
 
 
-public class GB18030SMModel extends SMModel
-{
+public class GB18030SMModel extends SMModel {
     ////////////////////////////////////////////////////////////////
     // constants
     ////////////////////////////////////////////////////////////////
@@ -55,8 +54,7 @@ public class GB18030SMModel extends SMModel
     ////////////////////////////////////////////////////////////////
     // methods
     ////////////////////////////////////////////////////////////////
-    public GB18030SMModel()
-    {
+	public GB18030SMModel() {
         super(
                 new PkgInt(INDEX_SHIFT_4BITS, SHIFT_MASK_4BITS, BIT_SHIFT_4BITS, UNIT_MASK_4BITS, gb18030ClassTable),
                 GB18030_CLASS_FACTOR,

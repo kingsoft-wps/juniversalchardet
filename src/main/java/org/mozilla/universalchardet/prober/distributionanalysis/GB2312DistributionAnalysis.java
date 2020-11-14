@@ -37,8 +37,7 @@
 
 package org.mozilla.universalchardet.prober.distributionanalysis;
 
-public class GB2312DistributionAnalysis extends CharDistributionAnalysis
-{
+public class GB2312DistributionAnalysis extends CharDistributionAnalysis {
     ////////////////////////////////////////////////////////////////
     // constants
     ////////////////////////////////////////////////////////////////
@@ -52,16 +51,14 @@ public class GB2312DistributionAnalysis extends CharDistributionAnalysis
     ////////////////////////////////////////////////////////////////
     // methods
     ////////////////////////////////////////////////////////////////
-    public GB2312DistributionAnalysis()
-    {
+	public GB2312DistributionAnalysis() {
         super();
         this.charToFreqOrder = gb2312CharToFreqOrder;
         this.typicalDistributionRatio = GB2312_TYPICAL_DISTRIBUTION_RATIO;
     }
 
     @Override
-    protected int getOrder(byte[] buf, int offset)
-    {
+	protected int getOrder(byte[] buf, int offset) {
         int highbyte = buf[offset] & 0xFF;
         if (highbyte >= HIGHBYTE_BEGIN) {
             int lowbyte = buf[offset+1] & 0xFF;

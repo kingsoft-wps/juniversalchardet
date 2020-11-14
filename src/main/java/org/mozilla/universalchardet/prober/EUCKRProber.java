@@ -44,8 +44,7 @@ import org.mozilla.universalchardet.prober.statemachine.SMModel;
 import org.mozilla.universalchardet.Constants;
 
 
-public class EUCKRProber extends CharsetProber
-{
+public class EUCKRProber extends CharsetProber {
     ////////////////////////////////////////////////////////////////
     // fields
     ////////////////////////////////////////////////////////////////
@@ -62,8 +61,7 @@ public class EUCKRProber extends CharsetProber
     ////////////////////////////////////////////////////////////////
     // methods
     ////////////////////////////////////////////////////////////////
-    public EUCKRProber()
-    {
+	public EUCKRProber() {
         super();
         this.codingSM = new CodingStateMachine(smModel);
         this.distributionAnalyzer = new EUCKRDistributionAnalysis();
@@ -72,8 +70,7 @@ public class EUCKRProber extends CharsetProber
     }
     
     @Override
-    public String getCharSetName()
-    {
+	public String getCharSetName() {
         return Constants.CHARSET_EUC_KR;
     }
 
@@ -83,14 +80,12 @@ public class EUCKRProber extends CharsetProber
 	}
 
     @Override
-    public ProbingState getState()
-    {
+	public ProbingState getState() {
         return this.state;
     }
 
     @Override
-    public ProbingState handleData(byte[] buf, int offset, int length)
-    {
+	public ProbingState handleData(byte[] buf, int offset, int length) {
         int codingState;
         
         int maxPos = offset + length;
@@ -127,15 +122,14 @@ public class EUCKRProber extends CharsetProber
     }
 
     @Override
-    public final void reset()
-    {
+	public final void reset() {
         this.codingSM.reset();
         this.state = ProbingState.DETECTING;
         this.distributionAnalyzer.reset();
         java.util.Arrays.fill(this.lastChar, (byte)0);
     }
 
-    @Override
-    public void setOption()
-    {}
+	@Override
+	public void setOption() {
+	}
 }
