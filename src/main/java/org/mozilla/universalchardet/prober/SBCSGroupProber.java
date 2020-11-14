@@ -166,7 +166,7 @@ public class SBCSGroupProber extends CharsetProber {
 	}
 
 	@Override
-	public void reset() {
+	public final void reset() {
 		this.activeNum = 0;
 		for (CharsetProber prober : this.probers) {
 			prober.reset();

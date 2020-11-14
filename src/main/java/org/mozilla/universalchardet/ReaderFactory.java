@@ -60,8 +60,8 @@ public final class ReaderFactory {
 		String detectedEncoding = UniversalDetector.detectCharset(file);
 		if (detectedEncoding != null) {
 			cs = Charset.forName(detectedEncoding);
-		}
-		if (!cs.toString().contains("UTF")) {
+		}		
+		if (!cs.name().contains("UTF")) {
 			return Files.newBufferedReader(file.toPath(), cs);			
 		}
 		Path path = file.toPath();

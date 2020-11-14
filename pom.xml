@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.albfernandez</groupId>
 	<artifactId>juniversalchardet</artifactId>
-	<version>2.4.3-SNAPSHOT</version>
+	<version>2.3.3-SNAPSHOT</version>
 	<url>https://github.com/albfernandez/juniversalchardet</url>
 	<packaging>jar</packaging>
 	<name>juniversalchardet</name>
@@ -47,10 +47,10 @@
 		<compiler.module.level>9</compiler.module.level>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<version.spotbugs-maven-plugin>4.1.4</version.spotbugs-maven-plugin>
-        <version.findsecbugs-plugin>1.11.0</version.findsecbugs-plugin>
-        <version.sb-contrib>7.4.7</version.sb-contrib>
+		<version.findsecbugs-plugin>1.11.0</version.findsecbugs-plugin>
+		<version.sb-contrib>7.4.7</version.sb-contrib>
 	</properties>
 
 
@@ -172,30 +172,12 @@
 						</configuration>
 					</plugin>
 					<plugin>
-						<groupId>com.github.spotbugs</groupId>
-						<artifactId>spotbugs-maven-plugin</artifactId>
-						<version>${version.spotbugs-maven-plugin}</version>
-						<configuration>
-							<effort>Max</effort>
-	                        <threshold>Medium</threshold>
-	                        <includeTests>false</includeTests>
-	                        <failOnError>false</failOnError>
-							<plugins>
-								<plugin>
-									<groupId>com.h3xstream.findsecbugs</groupId>
-									<artifactId>findsecbugs-plugin</artifactId>
-									<version>${version.findsecbugs-plugin}</version>
-								</plugin>
-								<plugin>
-									<groupId>com.mebigfatguy.sb-contrib</groupId>
-									<artifactId>sb-contrib</artifactId>
-									<version>${version.sb-contrib}</version>
-								</plugin>
-							</plugins>
-						</configuration>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>3.0.5</version>
 						<executions>
 							<execution>
-								<id>spotbugs-check</id>
+								<id>findbugs-check</id>
 								<phase>verify</phase>
 								<goals>
 									<goal>check</goal>
@@ -244,7 +226,25 @@
 					<plugin>
 						<groupId>com.github.spotbugs</groupId>
 						<artifactId>spotbugs-maven-plugin</artifactId>
-						<version>4.0.0</version>
+						<version>${version.spotbugs-maven-plugin}</version>
+						<configuration>
+							<effort>Max</effort>
+							<threshold>Medium</threshold>
+							<includeTests>false</includeTests>
+							<failOnError>false</failOnError>
+							<plugins>
+								<plugin>
+									<groupId>com.h3xstream.findsecbugs</groupId>
+									<artifactId>findsecbugs-plugin</artifactId>
+									<version>${version.findsecbugs-plugin}</version>
+								</plugin>
+								<plugin>
+									<groupId>com.mebigfatguy.sb-contrib</groupId>
+									<artifactId>sb-contrib</artifactId>
+									<version>${version.sb-contrib}</version>
+								</plugin>
+							</plugins>
+						</configuration>
 						<executions>
 							<execution>
 								<id>spotbugs-check</id>

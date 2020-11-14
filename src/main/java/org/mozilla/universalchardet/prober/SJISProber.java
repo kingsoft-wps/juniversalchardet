@@ -136,7 +136,7 @@ public class SJISProber extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.codingSM.reset();
         this.state = ProbingState.DETECTING;

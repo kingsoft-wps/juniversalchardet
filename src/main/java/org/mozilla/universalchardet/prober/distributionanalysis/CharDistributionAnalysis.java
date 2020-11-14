@@ -104,7 +104,7 @@ public abstract class CharDistributionAnalysis
         return SURE_YES;
     }
     
-    public void reset()
+    public final void reset()
     {
         this.totalChars = 0;
         this.freqChars = 0;

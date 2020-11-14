@@ -149,7 +149,7 @@ public abstract class JapaneseContextAnalysis
         }
     }
     
-    public void reset()
+    public final void reset()
     {
         this.totalRel = 0;
         for (int i=0; i<NUM_OF_CATEGORY; ++i) {

@@ -173,7 +173,7 @@ public class HebrewProber extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.finalCharLogicalScore = 0;
         this.finalCharVisualScore = 0;

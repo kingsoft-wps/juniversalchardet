@@ -81,9 +81,7 @@ public class GB18030Prober extends CharsetProber
     @Override
     public float getConfidence()
     {
-        float distribCf = this.distributionAnalyzer.getConfidence();
-        
-        return distribCf;
+        return this.distributionAnalyzer.getConfidence();
     }
 
     @Override
@@ -131,7 +129,7 @@ public class GB18030Prober extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.codingSM.reset();
         this.state = ProbingState.DETECTING;

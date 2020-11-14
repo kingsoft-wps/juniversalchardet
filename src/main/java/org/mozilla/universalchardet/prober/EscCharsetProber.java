@@ -127,15 +127,14 @@ public class EscCharsetProber extends CharsetProber
     }
 
     @Override
-    public void reset()
-    {
-        this.state = ProbingState.DETECTING;
-        for (int i=0; i<this.codingSM.length; ++i) {
-            this.codingSM[i].reset();
-        }
-        this.activeSM = this.codingSM.length;
-        this.detectedCharset = null;
-    }
+	public final void reset() {
+		this.state = ProbingState.DETECTING;
+		for (int i = 0; i < this.codingSM.length; ++i) {
+			this.codingSM[i].reset();
+		}
+		this.activeSM = this.codingSM.length;
+		this.detectedCharset = null;
+	}
 
     @Override
     public void setOption()

@@ -43,6 +43,15 @@
 
 package org.mozilla.universalchardet;
 
+import static org.mozilla.universalchardet.Constants.CHARSET_US_ASCCI;
+import static org.mozilla.universalchardet.Constants.CHARSET_UTF_16BE;
+import static org.mozilla.universalchardet.Constants.CHARSET_UTF_16LE;
+import static org.mozilla.universalchardet.Constants.CHARSET_UTF_32BE;
+import static org.mozilla.universalchardet.Constants.CHARSET_UTF_32LE;
+import static org.mozilla.universalchardet.Constants.CHARSET_UTF_8;
+import static org.mozilla.universalchardet.Constants.CHARSET_X_ISO_10646_UCS_4_2143;
+import static org.mozilla.universalchardet.Constants.CHARSET_X_ISO_10646_UCS_4_3412;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -242,28 +251,28 @@ public class UniversalDetector
 			switch (b1) {
 			case 0xEF:
 			    if (b2 == 0xBB && b3 == 0xBF) {
-			        return Constants.CHARSET_UTF_8;
+			        return CHARSET_UTF_8;
 			    }
 			    break;
 			case 0xFE:
 			    if (b2 == 0xFF && b3 == 0x00 && b4 == 0x00) {
-			        return Constants.CHARSET_X_ISO_10646_UCS_4_3412;
+			        return CHARSET_X_ISO_10646_UCS_4_3412;
 			    } else if (b2 == 0xFF) {
-			        return Constants.CHARSET_UTF_16BE;
+			        return CHARSET_UTF_16BE;
 			    }
 			    break;
 			case 0x00:
 			    if (b2 == 0x00 && b3 == 0xFE && b4 == 0xFF) {
-			        return Constants.CHARSET_UTF_32BE;
+			        return CHARSET_UTF_32BE;
 			    } else if (b2 == 0x00 && b3 == 0xFF && b4 == 0xFE) {
-			        return Constants.CHARSET_X_ISO_10646_UCS_4_2143;
+			        return CHARSET_X_ISO_10646_UCS_4_2143;
 			    }
 			    break;
 			case 0xFF:
 			    if (b2 == 0xFE && b3 == 0x00 && b4 == 0x00) {
-			        return Constants.CHARSET_UTF_32LE;
+			        return CHARSET_UTF_32LE;
 			    } else if (b2 == 0xFE) {
-			        return Constants.CHARSET_UTF_16LE;
+			        return CHARSET_UTF_16LE;
 			    }
 			    break;
 			default: 
@@ -311,7 +320,7 @@ public class UniversalDetector
         } else if (this.inputState == InputState.ESC_ASCII) {
             // do nothing
         } else if (this.inputState == InputState.PURE_ASCII && this.onlyPrintableASCII) {
-        	this.detectedCharset = Constants.CHARSET_US_ASCCI;
+        	this.detectedCharset = CHARSET_US_ASCCI;
         }
         else {
             // do nothing
@@ -321,7 +330,7 @@ public class UniversalDetector
     /**
      * Resets detector to be used again.
      */
-    public void reset()
+    public final void reset()
     {
         this.done = false;
         this.start = true;

@@ -114,7 +114,7 @@ public class UTF8Prober extends CharsetProber
         return this.state;
     }
 
-    public void reset()
+    public final void reset()
     {
         this.codingSM.reset();
         this.numOfMBChar = 0;

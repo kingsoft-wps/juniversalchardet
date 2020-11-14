@@ -78,12 +78,9 @@ public class EUCKRProber extends CharsetProber
     }
 
     @Override
-    public float getConfidence()
-    {
-        float distribCf = this.distributionAnalyzer.getConfidence();
-        
-        return distribCf;
-    }
+	public float getConfidence() {
+		return this.distributionAnalyzer.getConfidence();
+	}
 
     @Override
     public ProbingState getState()
@@ -130,7 +127,7 @@ public class EUCKRProber extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.codingSM.reset();
         this.state = ProbingState.DETECTING;

@@ -176,7 +176,7 @@ public class SingleByteCharsetProber extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.state = ProbingState.DETECTING;
         this.lastOrder = 255;

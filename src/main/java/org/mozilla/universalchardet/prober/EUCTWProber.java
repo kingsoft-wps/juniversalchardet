@@ -81,9 +81,7 @@ public class EUCTWProber extends CharsetProber
     @Override
     public float getConfidence()
     {
-        float distribCf = this.distributionAnalyzer.getConfidence();
-        
-        return distribCf;
+        return this.distributionAnalyzer.getConfidence();
     }
 
     @Override
@@ -131,13 +129,12 @@ public class EUCTWProber extends CharsetProber
     }
 
     @Override
-    public void reset()
-    {
-        this.codingSM.reset();
-        this.state = ProbingState.DETECTING;
-        this.distributionAnalyzer.reset();
-        java.util.Arrays.fill(this.lastChar, (byte)0);
-    }
+	public final void reset() {
+		this.codingSM.reset();
+		this.state = ProbingState.DETECTING;
+		this.distributionAnalyzer.reset();
+		java.util.Arrays.fill(this.lastChar, (byte) 0);
+	}
 
     @Override
     public void setOption()

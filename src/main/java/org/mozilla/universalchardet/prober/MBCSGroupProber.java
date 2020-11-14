@@ -159,7 +159,7 @@ public class MBCSGroupProber extends CharsetProber
     }
 
     @Override
-    public void reset()
+    public final void reset()
     {
         this.activeNum = 0;
         for (CharsetProber prober: this.probers) {
