@@ -54,8 +54,7 @@ public class Big5SMModel extends SMModel {
     ////////////////////////////////////////////////////////////////
     // methods
     ////////////////////////////////////////////////////////////////
-    public Big5SMModel()
-    {
+	public Big5SMModel() {
         super(
                 new PkgInt(INDEX_SHIFT_4BITS, SHIFT_MASK_4BITS, BIT_SHIFT_4BITS, UNIT_MASK_4BITS, big5ClassTable),
                 BIG5_CLASS_FACTOR,
