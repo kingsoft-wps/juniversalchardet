@@ -48,7 +48,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<version.spotbugs-maven-plugin>4.1.4</version.spotbugs-maven-plugin>
+		<version.spotbugs-maven-plugin>4.4.2.2</version.spotbugs-maven-plugin>
 		<version.findsecbugs-plugin>1.11.0</version.findsecbugs-plugin>
 		<version.sb-contrib>7.4.7</version.sb-contrib>
 	</properties>
