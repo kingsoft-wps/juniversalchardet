@@ -56,6 +56,12 @@ public final class Constants {
     public static final String CHARSET_UTF_32BE     = "UTF-32BE".intern();
     public static final String CHARSET_UTF_32LE     = "UTF-32LE".intern();
     public static final String CHARSET_TIS620       = "TIS620".intern();
+    
+    /**
+     * @deprecated Mispelled, you shoud use {@link #CHARSET_US_ASCII}
+     */
+    @Deprecated
+    public static final String CHARSET_US_ASCCI     = "US-ASCII".intern();
     public static final String CHARSET_US_ASCII     = "US-ASCII".intern();
     
     
