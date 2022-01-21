@@ -43,7 +43,7 @@
 
 package org.mozilla.universalchardet;
 
-import static org.mozilla.universalchardet.Constants.CHARSET_US_ASCCI;
+import static org.mozilla.universalchardet.Constants.CHARSET_US_ASCII;
 import static org.mozilla.universalchardet.Constants.CHARSET_UTF_16BE;
 import static org.mozilla.universalchardet.Constants.CHARSET_UTF_16LE;
 import static org.mozilla.universalchardet.Constants.CHARSET_UTF_32BE;
@@ -313,7 +313,7 @@ public class UniversalDetector {
         } else if (this.inputState == InputState.ESC_ASCII) {
             // do nothing
         } else if (this.inputState == InputState.PURE_ASCII && this.onlyPrintableASCII) {
-        	this.detectedCharset = CHARSET_US_ASCCI;
+        	this.detectedCharset = CHARSET_US_ASCII;
         }
         else {
             // do nothing
