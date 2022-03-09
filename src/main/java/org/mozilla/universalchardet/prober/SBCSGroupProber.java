@@ -170,7 +170,7 @@ public class SBCSGroupProber extends CharsetProber
                     continue;
                 }
                 st = this.probers[i].handleData(newbuf.array(), 0, newbuf.position());
-                if (st == ProbingState.FOUND_IT) {
+                if (st == ProbingState.FOUND_IT || 0.99f == this.probers[i].getConfidence()) {
                     this.bestGuess = i;
                     this.state = ProbingState.FOUND_IT;
                     break;

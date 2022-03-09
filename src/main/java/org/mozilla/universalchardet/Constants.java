@@ -28,6 +28,10 @@ public final class Constants
     public static final String CHARSET_UTF_32BE     = "UTF-32BE".intern();
     public static final String CHARSET_UTF_32LE     = "UTF-32LE".intern();
 
+    // Listed chinese charset, avoiding bugs caused by alphabe case
+    public static final String CHARSET_GBK          = "GBK".intern();
+    public static final String CHARSET_TIS_620      = "TIS-620".intern();
+
     // WARNING: Listed below are charsets which Java does not support.
     public static final String CHARSET_HZ_GB_2312   = "HZ-GB-2312".intern(); // Simplified Chinese
     public static final String CHARSET_X_ISO_10646_UCS_4_3412 = "X-ISO-10646-UCS-4-3412".intern(); // Malformed UTF-32
